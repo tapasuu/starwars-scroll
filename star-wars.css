@@ -1,0 +1,280 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+/* @font-face kit by Fonts2u (http://www.fonts2u.com) */ @font-face {font-family:"STARWARS";src:url("./starwars/STARWARS.eot?") format("eot"),url("./starwars/STARWARS.woff") format("woff"),url("./starwars/STARWARS.ttf") format("truetype"),url("./starwars/STARWARS.svg#STARWARS") format("svg");font-weight:normal;font-style:normal;}
+
+* { padding: 0; margin: 0; }
+
+body, html{
+    width: 100%;
+    height: 100%;
+    font-family: "Droid Sans", arial, verdana, sans-serif;
+    font-weight: 700;
+    color: #ff6;
+    background-color: #000;
+    overflow: hidden;
+}
+
+/*####################
+# イントロテキスト
+####################*/
+.intro-txt{
+    position: relative;
+    width: 510px;
+    font-size: 200%;
+    font-weight: 400;
+    text-align: left;
+    word-spacing: 10px;
+    margin: 20% auto;
+    color: #4ee; /*ブルー*/
+    opacity: 0;
+    z-index: 1;
+    -webkit-animation: intro 2s ease-out;
+    -moz-animation: intro 2s ease-out;
+    -ms-animation: intro 2s ease-out;
+    -o-animation: intro 2s ease-out;
+    animation: intro 2s ease-out;
+}
+@media(max-width:599px){
+    .intro-txt{
+     width: 300px;
+     font-size:120%;
+     font-weight: 200;
+     word-spacing: 5px;
+     margin:50% auto;
+    }
+}
+
+/*徐々に透明度がゼロになり消えていく*/
+@-webkit-keyframes intro{
+    0% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@-moz-keyframes intro {
+    0% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@-ms-keyframes intro {
+    0% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@-o-keyframes intro {
+    0% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes intro {
+    0% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/*####################
+# STARWARSSロゴ
+####################*/
+h1{
+    width: 550px;
+    height:auto;
+    font-size: 10em;
+    font-family: "STARWARS";
+    text-align:center;
+    margin:-400px auto 0;
+    color: #000;
+    text-shadow:
+        -2px -2px 0 #ff6,
+        2px -2px 0 #ff6,
+        -2px 2px 0 #ff6,
+        2px 2px 0 #ff6;
+    opacity: 0;
+    -webkit-animation: logo 4s linear 2.5s;
+    -moz-animation: logo 4s ease-out 2.5s;
+    -ms-animation: logo 4s ease-out 2.5s;
+    -o-animation: logo 4s ease-out 2.5s;
+    animation: logo 4s linear 2.5s;
+}
+h1 > span{ /*改行*/
+    display: block;
+}
+@media(max-width:768px){
+    h1{
+     font-size: 5em;
+     width: 280px;
+     margin:-200px auto 0;
+    }
+}
+
+
+/*アニメーション：縮小・透明度を下げる*/
+@-webkit-keyframes logo {
+    0% { -webkit-transform: scale(2.5); opacity: 1; }
+    50% {  opacity: 1; }
+    60% {  opacity: 1; }
+    70% {  opacity: 1; }
+    80% {  opacity: 1; }
+    90% {  opacity: 1; }
+    100% { -webkit-transform: scale(1.5); opacity: 0;}
+}
+
+@-moz-keyframes logo {
+    0% { -moz-transform: scale(2.5); opacity: 1; }
+    50% {  opacity: 1; }
+    60% {  opacity: 1; }
+    70% {  opacity: 1; }
+    80% {  opacity: 1; }
+    90% {  opacity: 1; }
+    100% { -moz-transform: scale(1.5); opacity: 0;}
+}
+
+@-ms-keyframes logo {
+    0% { -ms-transform: scale(2.5); opacity: 1; }
+    50% {  opacity: 1; }
+    60% {  opacity: 1; }
+    70% {  opacity: 1; }
+    80% {  opacity: 1; }
+    90% {  opacity: 1; }
+    100% { -ms-transform: scale(1.5); opacity: 0;}
+}
+
+@-o-keyframes logo {
+    0% { -o-transform: scale(2.5); opacity: 1; }
+    50% {  opacity: 1; }
+    60% {  opacity: 1; }
+    70% {  opacity: 1; }
+    80% {  opacity: 1; }
+    90% {  opacity: 1; }
+    100% { -o-transform: scale(1.5); opacity: 0;}
+}
+
+@keyframes logo {
+    0% { transform: scale(2.5); opacity: 1; }
+    50% {  opacity: 1; }
+    60% {  opacity: 1; }
+    70% {  opacity: 1; }
+    80% {  opacity: 1; }
+    90% {  opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0;}
+}
+
+
+/*####################
+# スクロールする本文
+####################*/
+#titles{ /*ラッパー*/
+    position: absolute;
+    width: 18em;
+    height: 50em;
+    bottom: 0;
+    left: 50%;
+    margin-left: -9em;
+    font-size: 350%;
+    line-height: 1.5;
+    text-align: justify;
+    overflow: hidden;
+    -webkit-transform-origin: 50% 100%; /*左右はcenter,上下はbottomを基準 */
+    -moz-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    -o-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-transform: perspective(300px) rotateX(25deg); /*X軸を基準に3次元変形する*/
+    -moz-transform: perspective(300px) rotateX(25deg);
+    -ms-transform: perspective(300px) rotateX(25deg);
+    -o-transform: perspective(300px) rotateX(25deg);
+    transform: perspective(300px) rotateX(25deg);
+}
+@media(max-width:768px){
+    #titles{
+     font-size: 28px;
+    }
+}
+
+#titles:after{
+    position: absolute;
+    content: ' ';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 60%;/* 位置ではなく高さを指定*/
+    opacity: 0;
+    /*topを基準に0%の真っ黒,bottomで100%の透明になる*/
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+    background-image: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+    background-image: -ms-linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+    background-image: -o-linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+    background-image: linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+    pointer-events: none; /*マウスイベントが効かなくなる*/
+    -webkit-animation: filter 1s linear 8s forwards;
+    -moz-animatin:filter 1s linear 8s forwards;
+    -ms-animatin:filter 1s linear 8s forwards;
+    -o-animatin:filter 1s linear 8s forwards;
+    animatin:filter 1s linear 8s forwards;
+}
+/*animation*/
+@-webkit-keyframes filter{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+@-moz-keyframes filter{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+@-ms-keyframes filter{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+@-o-keyframes filter{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+@keyframes filter{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+/* 本文の細かなレイアウト */
+#titles p{
+    margin: 0.8em 0;
+    word-spacing: 20px; /*単語の字間を開ける*/
+}
+/*本文ラッパー内部のレイアウト*/
+#titlecontent{
+    position: absolute;
+    top: 100%;
+    -webkit-animation: scroll 60s linear 5.5s infinite;
+    -moz-animation: scroll 60s linear 5.5s infinite;
+    -ms-animation: scroll 60s linear 5.5s infinite;
+    -o-animation: scroll 60s linear 5.5s infinite;
+    animation: scroll 60s linear 5.5s infinite;
+}
+#titles p.center{ /*冒頭のみセンタリング*/
+    text-align: center;
+}
+
+/* アニメーション：スクロールして消す */
+@-webkit-keyframes scroll {
+    0% { top: 100%; }
+    100% { top: -170%; } /*含むテキストの高さによって*/
+
+@-moz-keyframes scroll {
+    0% { top: 100%; }
+    100% { top: -170%; }
+}
+
+@-ms-keyframes scroll {
+    0% { top: 100%; }
+    100% { top: -170%; }
+}
+
+@-o-keyframes scroll {
+    0% { top: 100%; }
+    100% { top: -170%; }
+}
+
+@keyframes scroll {
+    0% { top: 100%; }
+    100% { top: -170%; }
+}
